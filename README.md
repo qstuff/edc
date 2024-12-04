@@ -4,13 +4,13 @@ A demo app that let the user browse some locations of POI around the [evenly](ht
 The POI data is retrieved from the [Foursquare Places API](https://docs.foursquare.com/data-products/docs/place-delivery-options)
 A POI can be shown on a Map (Open Street Maps is used)
 
-The architecture follows the clean architecture principles by dividing the code into
-three layers (ui, domain, data). For now they live all in the app module, but they should
+The architecture follows clean architecture principles by dividing the code into
+three layers (ui, domain, data). For now they all live in the app module, but they should
 be moved into separate modules to provide a cleaner separation in case this app is
 further developed.
 
 It also uses the MVVM pattern using ViewModel which manages the ui state,
-a usecase as a layer to the repository which may contain the business logic,
+a usecase as a layer to the repository which contains the business logic,
 a repository as an interface to the data source.
 
 ## Build instructions
@@ -26,4 +26,3 @@ foursquare.api.token=FOURSQUARE_API_TOKEN
 * [Retrofit](https://square.github.io/retrofit/) and [OkHttp](https://square.github.io/okhttp/) for API requests
 * [OSMDroid Map (Open Street Map)](https://github.com/osmdroid/osmdroid)
 * [Mockk](https://mockk.io/) Mocking library for Kotlin
-* Coroutine Test framework

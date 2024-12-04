@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit
 
 /**
  * Retrofit connector to the foursquare API.
+ *
  * Header fields (Authorization, Accept) are injected with an Interceptor.
  */
 class FoursquarePlacesDataSource(
@@ -70,5 +71,4 @@ class FoursquarePlacesDataSource(
             else
                 HttpLoggingInterceptor.Level.NONE
         )
-
 }

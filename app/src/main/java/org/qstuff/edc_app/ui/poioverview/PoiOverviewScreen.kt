@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.koin.androidx.compose.koinViewModel
 import org.qstuff.edc_app.domain.entity.Poi
-import org.qstuff.edc_app.ui.common.LoadingIndicator
+import org.qstuff.edc_app.ui.common_composables.LoadingIndicator
 import org.qstuff.edc_app.ui.mapview.OsmdroidScreen
 
 /**

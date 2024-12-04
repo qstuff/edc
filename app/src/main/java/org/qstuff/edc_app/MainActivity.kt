@@ -44,8 +44,8 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun setupOsmDroid() {
-        val provider = Configuration.getInstance()
-        provider.userAgentValue = BuildConfig.APPLICATION_ID
+        Configuration.getInstance()
+            .userAgentValue = BuildConfig.APPLICATION_ID
     }
 }
 

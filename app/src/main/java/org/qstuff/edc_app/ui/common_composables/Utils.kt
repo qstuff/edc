@@ -1,4 +1,4 @@
-package org.qstuff.edc_app.ui.common
+package org.qstuff.edc_app.ui.common_composables
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
