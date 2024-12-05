@@ -22,8 +22,8 @@ foursquare.api.token=FOURSQUARE_API_TOKEN
 
 ## Tech Stack
 
-* MVVM architecture
-* Jetpack Compose
+* [Jetpack Compose](https://developer.android.com/develop/ui/compose/documentation)
+* [Coroutines](https://kotlinlang.org/docs/coroutines-overview.html) and [Flow](https://kotlinlang.org/docs/flow.html)
 * [Koin](https://insert-koin.io/) & [Koin Test](https://insert-koin.io/docs/quickstart/junit-test/) for dependency injection
 * [Retrofit](https://square.github.io/retrofit/) and [OkHttp](https://square.github.io/okhttp/) for API requests
 * [OSMDroid Map (Open Street Map)](https://github.com/osmdroid/osmdroid)
