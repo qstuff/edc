@@ -13,6 +13,8 @@ It also uses the MVVM pattern using ViewModel which manages the ui state,
 a usecase as a layer to the repository which contains the business logic,
 a repository as an interface to the data source.
 
+The app supports Android 11 and higher (minSDK 30, targetSDK 34)
+
 ## Build instructions
 
 To use the Foursquare API you need to add a valid API token in local.properties:
