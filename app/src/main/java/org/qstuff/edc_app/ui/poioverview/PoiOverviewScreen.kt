@@ -42,17 +42,16 @@ fun PoiOverviewScreen(
     modifier: Modifier = Modifier,
     onSharePoi: (String) -> Unit
 ) {
-    var uiState by remember { mutableStateOf(emptyList<Poi>()) }
     var showLoadingIndicator by remember { mutableStateOf(false) }
     var showErrorMessage by remember { mutableStateOf(false) }
     var errorMessage by remember { mutableStateOf("") }
-
     var mapVisible by remember { mutableStateOf(false) }
+    var poiList by remember { mutableStateOf(emptyList<Poi>()) }
 
     // TODO: Evenly is the default, this needs to be changed
     var cameraPosition by remember { mutableStateOf(Pair(52.500342, 13.425170)) }
 
-    when (val state = poiOverviewViewModel.poiUiState.collectAsState().value) {
+    when (val uiState = poiOverviewViewModel.poiUiState.collectAsState().value) {
         is PoiOverviewViewModel.PoiUiState.Empty -> {
             showLoadingIndicator = false
             showErrorMessage = false
@@ -60,12 +59,12 @@ fun PoiOverviewScreen(
         is PoiOverviewViewModel.PoiUiState.Error -> {
             showLoadingIndicator = false
             showErrorMessage = true
-            errorMessage = state.message
+            errorMessage = uiState.message
         }
         is PoiOverviewViewModel.PoiUiState.Loaded -> {
             showLoadingIndicator = false
             showErrorMessage = false
-            uiState = state.poiList
+            poiList = uiState.poiList
         }
         PoiOverviewViewModel.PoiUiState.Loading -> {
             showLoadingIndicator = true
@@ -81,7 +80,7 @@ fun PoiOverviewScreen(
         else {
             PoiList(
                 modifier = modifier,
-                poiList = uiState,
+                poiList = poiList,
                 onShowPoiOnMap = { poi ->
                     mapVisible = true
                     cameraPosition = Pair(
@@ -113,7 +112,7 @@ fun PoiOverviewScreen(
 @Composable
 fun PoiList(
     modifier: Modifier = Modifier,
-    poiList: List<Poi> = listOf(),
+    poiList: List<Poi> = emptyList(),
     onShowPoiOnMap: (poi: Poi) -> Unit,
     onSharePoi: (poi: Poi) -> Unit
 ) {

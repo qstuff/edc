@@ -16,7 +16,7 @@ data class FoursquareNearbyItem(
         Poi(
             name = name,
             shareLink = createShareLink(),
-            category = categories.first().name,
+            category = categories.firstOrNull()?.name ?: "No category available ",
             mainLocationLat = geocodes.main.latitude,
             mainLocationLong = geocodes.main.longitude
         )
